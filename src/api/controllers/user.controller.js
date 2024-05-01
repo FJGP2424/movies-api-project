@@ -30,8 +30,8 @@ const updateUser = async (req, res) => {
 
 const selectUser = async (req, res) => {
   const nameUser = req.query.name;
-  const users = await User.find({ name: nameUser })
-    .populate({ path: 'movie', select: 'name' })// de esta forma accedemos directamente a la información.
+  const users = await User.find() //para filtrar, dentro del parentesis pondria { name: nameUser }
+    .populate({ path: 'movie', select: 'name' }) // de esta forma accedemos directamente a la información.
   return res.status(200).json(users);
 };
 
