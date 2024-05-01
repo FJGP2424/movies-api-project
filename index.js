@@ -2,6 +2,7 @@
 const express = require('express');
 const { connectDB } = require('./src/utils/database');
 const routerMovie = require("./src/api/routes/movie.routes")
+const routerUser = require("./src/api/routes/user.routes")
 
 // configuración del servidor
 const server = express();
@@ -10,6 +11,7 @@ connectDB();
 
 // configuro el servidor con las rutas
 server.use("/", routerMovie)
+server.use("/user", routerUser)
 
 //ejecucion del servidor
 const PORT = 5001;
