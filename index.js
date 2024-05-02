@@ -1,8 +1,10 @@
 //import de dependecias y archivos
 const express = require('express');
 const { connectDB } = require('./src/utils/database');
-const routerMovie = require("./src/api/routes/movie.routes")
-const routerUser = require("./src/api/routes/user.routes")
+const routerMovie = require("./src/api/routes/movie.routes");
+const routerUser = require("./src/api/routes/user.routes");
+const env = require("dotenv");
+env.config()// Nospermite trabajar con variables de entorno
 
 // configuración del servidor
 const server = express();
